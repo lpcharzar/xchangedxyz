@@ -66,7 +66,7 @@ const AuthPage = () => {
           {/* Header */}
           <div className="text-center">
             <h1 className="text-2xl font-bold" style={{ color: '#1a202c' }}>
-              Welcome to xchanged.xyz
+              Welcome to <span style={{ color: '#3B82F6' }}>x</span>changed<span style={{ color: '#3B82F6' }}>.xyz</span>
             </h1>
             <p className="mt-1 text-sm" style={{ color: '#718096' }}>
               {isLogin ? "Sign in to continue" : "Create an account to get started"}

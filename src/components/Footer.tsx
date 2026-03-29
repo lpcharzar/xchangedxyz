@@ -113,7 +113,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} xchanged.xyz — All rights reserved.
+            © {new Date().getFullYear()} <span className="text-primary">x</span>changed<span className="text-primary">.xyz</span> — All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             Powered by liquidity providers
