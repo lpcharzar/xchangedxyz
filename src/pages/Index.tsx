@@ -4,6 +4,7 @@ import ExchangeWidget from "@/components/ExchangeWidget";
 import StatsAndSwaps from "@/components/StatsAndSwaps";
 import WhySection from "@/components/WhySection";
 import HowItWorks from "@/components/HowItWorks";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
         <WhySection />
         <HowItWorks />
       </main>
+      <Footer />
     </div>
   );
 };
