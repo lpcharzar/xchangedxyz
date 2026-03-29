@@ -64,11 +64,7 @@ const AuthPage = () => {
         <div className="bg-white rounded-2xl shadow-lg p-8 space-y-6">
           {/* Logo */}
           <div className="flex justify-center">
-            <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#2d3748' }}>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 17L17 7M7 7L17 17" stroke="#38bdf8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
+            <img src="/logo.png" alt="xchanged.xyz" className="w-16 h-16" />
           </div>
 
           {/* Header */}
