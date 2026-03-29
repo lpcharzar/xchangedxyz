@@ -14,7 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      swaps: {
+        Row: {
+          amount: number
+          created_at: string
+          from_currency: string
+          from_icon: string | null
+          id: string
+          to_currency: string
+          to_icon: string | null
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          from_currency: string
+          from_icon?: string | null
+          id?: string
+          to_currency: string
+          to_icon?: string | null
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          from_currency?: string
+          from_icon?: string | null
+          id?: string
+          to_currency?: string
+          to_icon?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
