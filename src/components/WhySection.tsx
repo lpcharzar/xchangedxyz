@@ -11,7 +11,7 @@ const WhySection = () => {
   return (
     <section className="max-w-4xl mx-auto mt-20">
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-foreground">Why xchanged.xyz?</h2>
+        <h2 className="text-3xl font-bold text-foreground">Why <span className="text-primary">x</span>changed<span className="text-primary">.xyz</span>?</h2>
         <p className="text-muted-foreground mt-2">The simplest way to swap crypto without middlemen.</p>
       </div>
       <div className="grid sm:grid-cols-2 gap-6">

@@ -31,8 +31,9 @@ const Footer = () => {
             <button onClick={() => navigate("/")} className="flex items-center gap-2 mb-3">
               <ArrowLeftRight className="h-5 w-5 text-primary" />
               <span className="text-lg font-bold">
-                <span className="text-primary">xchanged</span>
-                <span className="text-foreground">.xyz</span>
+                <span className="text-primary">x</span>
+                <span className="text-foreground">changed</span>
+                <span className="text-primary">.xyz</span>
               </span>
             </button>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -112,7 +113,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} xchanged.xyz — All rights reserved.
+            © {new Date().getFullYear()} <span className="text-primary">x</span>changed<span className="text-primary">.xyz</span> — All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
             Powered by liquidity providers
