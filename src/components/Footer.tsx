@@ -29,7 +29,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <button onClick={() => navigate("/")} className="flex items-center gap-2 mb-3">
-              <ArrowLeftRight className="h-5 w-5 text-primary" />
+              <img src="/logo.png" alt="xchanged.xyz" className="h-6 w-6" />
               <span className="text-lg font-bold">
                 <span className="text-primary">x</span>
                 <span className="text-foreground">changed</span>

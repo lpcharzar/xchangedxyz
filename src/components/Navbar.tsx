@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav className="border-b border-border">
       <div className="flex items-center justify-between px-6 py-4">
         <button onClick={() => navigate("/")} className="flex items-center gap-2">
-          <ArrowLeftRight className="h-6 w-6 text-primary" />
+          <img src="/logo.png" alt="xchanged.xyz" className="h-7 w-7" />
           <span className="text-lg font-bold">
             <span className="text-primary">x</span>
             <span className="text-foreground">changed</span>
