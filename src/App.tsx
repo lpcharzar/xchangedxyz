@@ -12,6 +12,7 @@ import OrderStatus from "./pages/OrderStatus";
 import FAQ from "./pages/FAQ";
 import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
+import FloatingHelpButton from "./components/FloatingHelpButton";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <AuthProvider>
+          <FloatingHelpButton />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/auth" element={<AuthPage />} />
