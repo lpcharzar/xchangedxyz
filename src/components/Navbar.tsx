@@ -62,6 +62,7 @@ const Navbar = () => {
               <span className="hidden sm:inline">Admin</span>
             </Button>
           )}
+          {user ? (
             <Button
               onClick={signOut}
               variant="outline"
