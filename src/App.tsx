@@ -13,6 +13,7 @@ import FAQ from "./pages/FAQ";
 import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 import FloatingHelpButton from "./components/FloatingHelpButton";
+import AdminConsole from "./pages/AdminConsole";
 
 const queryClient = new QueryClient();
 
