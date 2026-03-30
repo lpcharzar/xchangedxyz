@@ -51,7 +51,17 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          {user ? (
+          {user?.email === ADMIN_EMAIL && (
+            <Button
+              onClick={() => navigate("/admin")}
+              variant="outline"
+              size="sm"
+              className="gap-2 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground"
+            >
+              <Shield className="h-4 w-4" />
+              <span className="hidden sm:inline">Admin</span>
+            </Button>
+          )}
             <Button
               onClick={signOut}
               variant="outline"
