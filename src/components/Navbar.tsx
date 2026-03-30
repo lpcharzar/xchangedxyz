@@ -1,8 +1,10 @@
-import { ArrowLeftRight, Clock, BookOpen, Search, HelpCircle, Headphones, LogIn, LogOut, Menu, X } from "lucide-react";
+import { ArrowLeftRight, Clock, BookOpen, Search, HelpCircle, Headphones, LogIn, LogOut, Menu, X, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
+
+const ADMIN_EMAIL = "xchanged.xyz@gmail.com";
 
 const navItems = [
   { label: "Exchange", icon: ArrowLeftRight, path: "/" },
