@@ -1,8 +1,10 @@
-import { ArrowLeftRight, Clock, BookOpen, Search, HelpCircle, Headphones, LogIn, LogOut, Menu, X } from "lucide-react";
+import { ArrowLeftRight, Clock, BookOpen, Search, HelpCircle, Headphones, LogIn, LogOut, Menu, X, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
+
+const ADMIN_EMAIL = "xchanged.xyz@gmail.com";
 
 const navItems = [
   { label: "Exchange", icon: ArrowLeftRight, path: "/" },
@@ -49,6 +51,17 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-2">
+          {user?.email === ADMIN_EMAIL && (
+            <Button
+              onClick={() => navigate("/admin")}
+              variant="outline"
+              size="sm"
+              className="gap-2 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground"
+            >
+              <Shield className="h-4 w-4" />
+              <span className="hidden sm:inline">Admin</span>
+            </Button>
+          )}
           {user ? (
             <Button
               onClick={signOut}

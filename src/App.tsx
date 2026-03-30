@@ -13,6 +13,7 @@ import FAQ from "./pages/FAQ";
 import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
 import FloatingHelpButton from "./components/FloatingHelpButton";
+import AdminConsole from "./pages/AdminConsole";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/order-status" element={<OrderStatus />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/support" element={<Support />} />
+            <Route path="/admin" element={<AdminConsole />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
