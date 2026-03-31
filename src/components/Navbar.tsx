@@ -3,16 +3,17 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const ADMIN_EMAIL = "xchanged.xyz@gmail.com";
 
 const navItems = [
-  { label: "Exchange", icon: ArrowLeftRight, path: "/" },
-  { label: "Order History", icon: Clock, path: "/order-history" },
-  { label: "Address Book", icon: BookOpen, path: "/address-book" },
-  { label: "Order Status", icon: Search, path: "/order-status" },
-  { label: "FAQ", icon: HelpCircle, path: "/faq" },
-  { label: "Support", icon: Headphones, path: "/support" },
+  { label: "Exchange", icon: ArrowLeftRight, path: "/", requiresAuth: false },
+  { label: "Order History", icon: Clock, path: "/order-history", requiresAuth: true },
+  { label: "Address Book", icon: BookOpen, path: "/address-book", requiresAuth: true },
+  { label: "Order Status", icon: Search, path: "/order-status", requiresAuth: false },
+  { label: "FAQ", icon: HelpCircle, path: "/faq", requiresAuth: false },
+  { label: "Support", icon: Headphones, path: "/support", requiresAuth: false },
 ];
 
 const Navbar = () => {
@@ -51,6 +52,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           {user?.email === ADMIN_EMAIL && (
             <Button
               onClick={() => navigate("/admin")}
@@ -77,7 +79,7 @@ const Navbar = () => {
               onClick={() => navigate("/auth")}
               variant="outline"
               size="sm"
-              className="gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              className="hidden md:inline-flex gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
               <LogIn className="h-4 w-4" />
               Login
@@ -90,21 +92,55 @@ const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden border-t border-border px-4 pb-4 space-y-1">
-          {navItems.map((item) => (
+        <div className="md:hidden border-t border-border px-4 pb-4 pt-2 space-y-1">
+          {navItems.map((item) => {
+            const locked = item.requiresAuth && !user;
+            return (
+              <button
+                key={item.label}
+                onClick={() => {
+                  if (!locked) {
+                    navigate(item.path);
+                    setMobileOpen(false);
+                  }
+                }}
+                disabled={locked}
+                className={`flex items-center justify-between w-full px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                  locked
+                    ? "text-muted-foreground/40 cursor-not-allowed"
+                    : location.pathname === item.path
+                      ? "bg-secondary text-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                }`}
+              >
+                <span className="flex items-center gap-2">
+                  <item.icon className="h-4 w-4" />
+                  {item.label}
+                </span>
+                {locked && (
+                  <span className="text-xs text-primary font-medium">Login to view</span>
+                )}
+              </button>
+            );
+          })}
+
+          {user ? (
             <button
-              key={item.label}
-              onClick={() => { navigate(item.path); setMobileOpen(false); }}
-              className={`flex items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium w-full transition-colors ${
-                location.pathname === item.path
-                  ? "bg-secondary text-foreground"
-                  : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-              }`}
+              onClick={() => { signOut(); setMobileOpen(false); }}
+              className="flex items-center justify-center gap-2 w-full mt-3 px-4 py-3 rounded-full bg-secondary text-muted-foreground text-sm font-medium hover:bg-secondary/80 transition-colors"
             >
-              <item.icon className="h-4 w-4" />
-              {item.label}
+              <LogOut className="h-4 w-4" />
+              Logout
             </button>
-          ))}
+          ) : (
+            <button
+              onClick={() => { navigate("/auth"); setMobileOpen(false); }}
+              className="flex items-center justify-center gap-2 w-full mt-3 px-4 py-3 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
+            >
+              <LogIn className="h-4 w-4" />
+              Login / Register
+            </button>
+          )}
         </div>
       )}
     </nav>
