@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 import { cloudflare } from "@cloudflare/vite-plugin";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig({
   server: {
     host: "::",
     port: 8080,
@@ -13,11 +13,11 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), cloudflare(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [react(), cloudflare(), process.env.NODE_ENV === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
     dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime"],
   },
-}));
+});
