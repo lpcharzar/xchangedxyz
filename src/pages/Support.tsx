@@ -30,10 +30,10 @@ const Support = () => {
       setEmail("");
       setSubject("");
       setMessage("");
-    } catch (err: any) {
+    } catch (err: unknown) {
       toast({
         title: "Failed to send",
-        description: err?.message || "Something went wrong. Please try again.",
+        description: err instanceof Error ? err.message : "Something went wrong. Please try again.",
         variant: "destructive",
       });
     } finally {
