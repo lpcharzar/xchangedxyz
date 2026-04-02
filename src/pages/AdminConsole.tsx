@@ -363,7 +363,7 @@ const StatCard = ({
   value,
   accent,
 }: {
-  icon: any;
+  icon: React.ElementType;
   label: string;
   value: string;
   accent: string;

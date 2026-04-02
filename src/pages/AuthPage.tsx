@@ -42,8 +42,9 @@ const AuthPage = () => {
         if (error) throw error;
         toast({ title: "Account created!", description: "Check your email to verify your account." });
       }
-    } catch (error: any) {
-      toast({ title: "Error", description: error.message, variant: "destructive" });
+    } catch (error: unknown) {
+      const msg = error instanceof Error ? error.message : "An unexpected error occurred";
+      toast({ title: "Error", description: msg, variant: "destructive" });
     } finally {
       setLoading(false);
     }
