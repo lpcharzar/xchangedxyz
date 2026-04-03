@@ -1,4 +1,4 @@
-import { ArrowLeftRight, Clock, BookOpen, Search, HelpCircle, Headphones, LogIn, LogOut, Menu, X, Shield } from "lucide-react";
+import { Clock, BookOpen, Search, HelpCircle, Headphones, LogIn, LogOut, Menu, X, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -8,7 +8,6 @@ import ThemeToggle from "@/components/ThemeToggle";
 const ADMIN_EMAIL = "xchanged.xyz@gmail.com";
 
 const navItems = [
-  { label: "Exchange", icon: ArrowLeftRight, path: "/", requiresAuth: false },
   { label: "Order History", icon: Clock, path: "/order-history", requiresAuth: true },
   { label: "Address Book", icon: BookOpen, path: "/address-book", requiresAuth: true },
   { label: "Order Status", icon: Search, path: "/order-status", requiresAuth: false },
@@ -23,11 +22,11 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="border-b border-border">
-      <div className="flex items-center justify-between px-6 py-4">
+    <nav className="relative z-20 border-b border-border/50 bg-background/30 backdrop-blur-md">
+      <div className="flex items-center justify-between px-6 py-3.5 max-w-6xl mx-auto">
         <button onClick={() => navigate("/")} className="flex items-center gap-2">
           <img src="/logo.png" alt="xchanged.xyz" className="h-7 w-7" />
-          <span className="text-lg font-bold">
+          <span className="text-lg font-bold tracking-tight">
             <span className="text-primary">x</span>
             <span className="text-foreground">changed</span>
             <span className="text-primary">.xyz</span>
@@ -39,13 +38,12 @@ const Navbar = () => {
             <button
               key={item.label}
               onClick={() => navigate(item.path)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 location.pathname === item.path
-                  ? "bg-secondary text-foreground"
-                  : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                  ? "text-foreground bg-secondary/60"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              <item.icon className="h-4 w-4" />
               {item.label}
             </button>
           ))}
@@ -67,23 +65,31 @@ const Navbar = () => {
           {user ? (
             <Button
               onClick={signOut}
-              variant="outline"
+              variant="ghost"
               size="sm"
-              className="gap-2 border-border text-muted-foreground hover:bg-secondary hover:text-foreground"
+              className="gap-2 text-muted-foreground hover:text-foreground"
             >
               <LogOut className="h-4 w-4" />
               <span className="hidden sm:inline">Logout</span>
             </Button>
           ) : (
-            <Button
-              onClick={() => navigate("/auth")}
-              variant="outline"
-              size="sm"
-              className="hidden md:inline-flex gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-            >
-              <LogIn className="h-4 w-4" />
-              Login
-            </Button>
+            <>
+              <Button
+                onClick={() => navigate("/auth")}
+                variant="ghost"
+                size="sm"
+                className="hidden md:inline-flex text-muted-foreground hover:text-foreground"
+              >
+                Login
+              </Button>
+              <Button
+                onClick={() => navigate("/auth")}
+                size="sm"
+                className="hidden md:inline-flex bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
+              >
+                Sign up
+              </Button>
+            </>
           )}
           <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-foreground">
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -92,7 +98,7 @@ const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden border-t border-border px-4 pb-4 pt-2 space-y-1">
+        <div className="md:hidden border-t border-border/50 px-4 pb-4 pt-2 space-y-1 bg-background/80 backdrop-blur-md">
           {navItems.map((item) => {
             const locked = item.requiresAuth && !user;
             return (
@@ -138,7 +144,7 @@ const Navbar = () => {
               className="flex items-center justify-center gap-2 w-full mt-3 px-4 py-3 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
             >
               <LogIn className="h-4 w-4" />
-              Login / Register
+              Login / Sign up
             </button>
           )}
         </div>
