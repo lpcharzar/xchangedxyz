@@ -1,7 +1,7 @@
 const ExchangeWidget = () => {
   return (
-    <div className="max-w-[560px] mx-auto">
-      <div className="rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-1 glow-primary">
+    <div className="max-w-[560px] mx-auto relative z-10">
+      <div className="exchange-glow rounded-2xl bg-card/90 backdrop-blur-md p-1.5 border border-border/50">
         <iframe
           id="simpleswap-frame"
           name="SimpleSwap Widget"
@@ -13,16 +13,26 @@ const ExchangeWidget = () => {
         />
       </div>
 
-      <div className="flex items-center justify-center gap-4 mt-5 text-xs text-muted-foreground">
-        <span className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-          Non-custodial
-        </span>
-        <span className="text-border">•</span>
-        <span>No KYC</span>
-        <span className="text-border">•</span>
-        <span>Best Rates</span>
-      </div>
+      <p className="text-center text-xs text-muted-foreground mt-4">
+        By using the site and creating an exchange, you agree to xchanged.xyz's{" "}
+        <a
+          href="https://simpleswap.io/terms-of-service"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          Terms of Service
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://simpleswap.io/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          Privacy Policy
+        </a>
+      </p>
     </div>
   );
 };
