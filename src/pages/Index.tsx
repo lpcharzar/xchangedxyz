@@ -8,9 +8,9 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background cosmic-bg">
       <Navbar />
-      <main className="px-4">
+      <main className="px-4 relative z-10">
         <HeroSection />
         <ExchangeWidget />
         <StatsAndSwaps />
