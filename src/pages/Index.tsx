@@ -8,21 +8,15 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen space-bg">
-      {/* Shooting stars */}
-      <div className="shooting-star" />
-      <div className="shooting-star" />
-      <div className="shooting-star" />
-
+    <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="px-4 relative">
+      <main className="px-4">
         <HeroSection />
         <ExchangeWidget />
         <StatsAndSwaps />
         <WhySection />
         <HowItWorks />
       </main>
-      <div className="ground-gradient" />
       <Footer />
     </div>
   );

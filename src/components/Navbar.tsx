@@ -22,25 +22,23 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="relative z-20 border-b border-border/50 bg-background/30 backdrop-blur-md">
-      <div className="flex items-center justify-between px-6 py-3.5 max-w-6xl mx-auto">
+    <nav className="border-b border-border bg-card/80 backdrop-blur-sm sticky top-0 z-40">
+      <div className="flex items-center justify-between px-5 py-3 max-w-5xl mx-auto">
         <button onClick={() => navigate("/")} className="flex items-center gap-2">
-          <img src="/logo.png" alt="xchanged.xyz" className="h-7 w-7" />
-          <span className="text-lg font-bold tracking-tight">
-            <span className="text-primary">x</span>
-            <span className="text-foreground">changed</span>
-            <span className="text-primary">.xyz</span>
+          <img src="/logo.png" alt="xchanged.xyz" className="h-6 w-6" />
+          <span className="text-base font-semibold tracking-tight text-foreground">
+            xchanged<span className="text-muted-foreground">.xyz</span>
           </span>
         </button>
 
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-0.5">
           {navItems.map((item) => (
             <button
               key={item.label}
               onClick={() => navigate(item.path)}
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-md text-sm transition-colors ${
                 location.pathname === item.path
-                  ? "text-foreground bg-secondary/60"
+                  ? "text-foreground bg-secondary"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -56,9 +54,9 @@ const Navbar = () => {
               onClick={() => navigate("/admin")}
               variant="outline"
               size="sm"
-              className="gap-2 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground"
+              className="gap-1.5 text-xs"
             >
-              <Shield className="h-4 w-4" />
+              <Shield className="h-3.5 w-3.5" />
               <span className="hidden sm:inline">Admin</span>
             </Button>
           )}
@@ -67,38 +65,28 @@ const Navbar = () => {
               onClick={signOut}
               variant="ghost"
               size="sm"
-              className="gap-2 text-muted-foreground hover:text-foreground"
+              className="gap-1.5 text-muted-foreground hover:text-foreground text-xs"
             >
-              <LogOut className="h-4 w-4" />
+              <LogOut className="h-3.5 w-3.5" />
               <span className="hidden sm:inline">Logout</span>
             </Button>
           ) : (
-            <>
-              <Button
-                onClick={() => navigate("/auth")}
-                variant="ghost"
-                size="sm"
-                className="hidden md:inline-flex text-muted-foreground hover:text-foreground"
-              >
-                Login
-              </Button>
-              <Button
-                onClick={() => navigate("/auth")}
-                size="sm"
-                className="hidden md:inline-flex bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
-              >
-                Sign up
-              </Button>
-            </>
+            <Button
+              onClick={() => navigate("/auth")}
+              size="sm"
+              className="hidden md:inline-flex text-xs"
+            >
+              Sign up
+            </Button>
           )}
           <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-foreground">
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden border-t border-border/50 px-4 pb-4 pt-2 space-y-1 bg-background/80 backdrop-blur-md">
+        <div className="md:hidden border-t border-border px-4 pb-4 pt-2 space-y-0.5 bg-card">
           {navItems.map((item) => {
             const locked = item.requiresAuth && !user;
             return (
@@ -111,7 +99,7 @@ const Navbar = () => {
                   }
                 }}
                 disabled={locked}
-                className={`flex items-center justify-between w-full px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                className={`flex items-center justify-between w-full px-3 py-2.5 rounded-md text-sm transition-colors ${
                   locked
                     ? "text-muted-foreground/40 cursor-not-allowed"
                     : location.pathname === item.path
@@ -124,7 +112,7 @@ const Navbar = () => {
                   {item.label}
                 </span>
                 {locked && (
-                  <span className="text-xs text-primary font-medium">Login to view</span>
+                  <span className="text-xs text-primary">Login required</span>
                 )}
               </button>
             );
@@ -133,7 +121,7 @@ const Navbar = () => {
           {user ? (
             <button
               onClick={() => { signOut(); setMobileOpen(false); }}
-              className="flex items-center justify-center gap-2 w-full mt-3 px-4 py-3 rounded-full bg-secondary text-muted-foreground text-sm font-medium hover:bg-secondary/80 transition-colors"
+              className="flex items-center justify-center gap-2 w-full mt-2 px-3 py-2.5 rounded-md bg-secondary text-muted-foreground text-sm hover:bg-secondary/80 transition-colors"
             >
               <LogOut className="h-4 w-4" />
               Logout
@@ -141,7 +129,7 @@ const Navbar = () => {
           ) : (
             <button
               onClick={() => { navigate("/auth"); setMobileOpen(false); }}
-              className="flex items-center justify-center gap-2 w-full mt-3 px-4 py-3 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors"
+              className="flex items-center justify-center gap-2 w-full mt-2 px-3 py-2.5 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
             >
               <LogIn className="h-4 w-4" />
               Login / Sign up
