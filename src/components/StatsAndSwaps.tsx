@@ -46,7 +46,6 @@ const StatsAndSwaps = () => {
     };
   }, []);
 
-  // Force re-render every minute for relative timestamps
   const [, setTick] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => setTick((t) => t + 1), 60000);
@@ -54,46 +53,50 @@ const StatsAndSwaps = () => {
   }, []);
 
   return (
-    <section className="relative z-10 py-12 md:py-20 max-w-3xl mx-auto px-4">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-foreground">
-        Recent transactions
+    <section className="relative z-10 py-16 max-w-3xl mx-auto">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
+        <span className="text-foreground">Recent transactions</span>
       </h2>
 
-      <div className="space-y-2">
-        {swaps.slice(0, 8).map((swap) => (
-          <div key={swap.id} className="swap-row-enter">
-            {/* Time + speed row */}
-            <div className="flex items-center justify-between px-5 py-2">
-              <span className="text-xs text-muted-foreground">
-                {formatDistanceToNow(new Date(swap.created_at), { addSuffix: true })}
-              </span>
+      <div className="rounded-2xl bg-card/60 backdrop-blur-sm border border-border/50 overflow-hidden">
+        <div className="divide-y divide-border/50">
+          {swaps.slice(0, 8).map((swap) => (
+            <div
+              key={swap.id}
+              className="swap-row-enter flex items-center justify-between px-5 py-3.5 hover:bg-secondary/30 transition-colors"
+            >
+              <div className="flex items-center gap-3 min-w-0">
+                <span className="text-xs text-muted-foreground w-20 shrink-0">
+                  {formatDistanceToNow(new Date(swap.created_at), { addSuffix: true })}
+                </span>
+                <div className="flex items-center gap-2">
+                  {swap.from_icon && (
+                    <img src={swap.from_icon} alt="" className="w-5 h-5 rounded-full" />
+                  )}
+                  <span className="text-sm font-medium text-foreground">
+                    {swap.amount} {swap.from_currency}
+                  </span>
+                </div>
+                <ArrowRight className="h-3.5 w-3.5 text-primary shrink-0" />
+                <div className="flex items-center gap-2">
+                  {swap.to_icon && (
+                    <img src={swap.to_icon} alt="" className="w-5 h-5 rounded-full" />
+                  )}
+                  <span className="text-sm font-medium text-foreground">{swap.to_currency}</span>
+                </div>
+              </div>
               <div className="flex items-center gap-1.5 text-muted-foreground">
-                <Clock className="h-3 w-3" />
+                <Clock className="h-3.5 w-3.5" />
                 <span className="text-xs">~2 min</span>
               </div>
             </div>
-
-            {/* Swap details row */}
-            <div className="tx-row flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-card/60 border border-border/30">
-              <span className="text-sm font-semibold text-foreground">
-                ${swap.amount} {swap.from_currency}
-              </span>
-              {swap.from_icon && (
-                <img src={swap.from_icon} alt="" className="w-5 h-5 rounded-full" />
-              )}
-              <ArrowRight className="h-3.5 w-3.5 text-muted-foreground" />
-              {swap.to_icon && (
-                <img src={swap.to_icon} alt="" className="w-5 h-5 rounded-full" />
-              )}
-              <span className="text-sm font-semibold text-foreground">{swap.to_currency}</span>
+          ))}
+          {swaps.length === 0 && (
+            <div className="px-5 py-8 text-center text-sm text-muted-foreground">
+              No transactions yet
             </div>
-          </div>
-        ))}
-        {swaps.length === 0 && (
-          <div className="px-5 py-12 text-center text-sm text-muted-foreground">
-            No transactions yet
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </section>
   );

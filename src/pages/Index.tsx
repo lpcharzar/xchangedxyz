@@ -1,27 +1,28 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ExchangeWidget from "@/components/ExchangeWidget";
-import WhySection from "@/components/WhySection";
 import StatsAndSwaps from "@/components/StatsAndSwaps";
+import WhySection from "@/components/WhySection";
 import HowItWorks from "@/components/HowItWorks";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen ff-bg">
+    <div className="min-h-screen space-bg">
+      {/* Shooting stars */}
       <div className="shooting-star" />
       <div className="shooting-star" />
       <div className="shooting-star" />
 
       <Navbar />
-      <main className="relative">
+      <main className="px-4 relative">
         <HeroSection />
         <ExchangeWidget />
-        <div className="landscape-gradient" />
-        <WhySection />
         <StatsAndSwaps />
+        <WhySection />
         <HowItWorks />
       </main>
+      <div className="ground-gradient" />
       <Footer />
     </div>
   );
