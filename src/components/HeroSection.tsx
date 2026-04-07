@@ -1,12 +1,12 @@
 const HeroSection = () => {
   return (
-    <div className="relative text-center pt-20 pb-10 z-10">
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-        <span className="text-foreground">Lightning</span>{" "}
-        <span className="text-gradient-cyan">cryptocurrency</span>
-        <br />
-        <span className="text-gradient-cyan">exchange</span>
+    <div className="text-center pt-16 pb-8">
+      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground">
+        Swap crypto instantly
       </h1>
+      <p className="mt-3 text-sm text-muted-foreground max-w-md mx-auto">
+        No registration. No limits. 1000+ coins supported.
+      </p>
     </div>
   );
 };

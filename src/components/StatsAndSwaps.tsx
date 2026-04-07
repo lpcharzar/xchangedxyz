@@ -1,4 +1,4 @@
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { formatDistanceToNow } from "date-fns";
@@ -52,50 +52,41 @@ const StatsAndSwaps = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <section className="relative z-10 py-16 max-w-3xl mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
-        <span className="text-foreground">Recent transactions</span>
-      </h2>
+  if (swaps.length === 0) return null;
 
-      <div className="rounded-2xl bg-card/60 backdrop-blur-sm border border-border/50 overflow-hidden">
-        <div className="divide-y divide-border/50">
+  return (
+    <section className="py-12 max-w-2xl mx-auto">
+      <h2 className="text-lg font-semibold text-foreground mb-4">Recent swaps</h2>
+
+      <div className="rounded-xl bg-card border border-border overflow-hidden">
+        <div className="divide-y divide-border">
           {swaps.slice(0, 8).map((swap) => (
             <div
               key={swap.id}
-              className="swap-row-enter flex items-center justify-between px-5 py-3.5 hover:bg-secondary/30 transition-colors"
+              className="swap-row-enter flex items-center justify-between px-4 py-3 hover:bg-secondary/30 transition-colors"
             >
-              <div className="flex items-center gap-3 min-w-0">
-                <span className="text-xs text-muted-foreground w-20 shrink-0">
-                  {formatDistanceToNow(new Date(swap.created_at), { addSuffix: true })}
-                </span>
-                <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5 min-w-0">
+                <div className="flex items-center gap-1.5">
                   {swap.from_icon && (
-                    <img src={swap.from_icon} alt="" className="w-5 h-5 rounded-full" />
+                    <img src={swap.from_icon} alt="" className="w-4 h-4 rounded-full" />
                   )}
-                  <span className="text-sm font-medium text-foreground">
+                  <span className="text-sm text-foreground">
                     {swap.amount} {swap.from_currency}
                   </span>
                 </div>
-                <ArrowRight className="h-3.5 w-3.5 text-primary shrink-0" />
-                <div className="flex items-center gap-2">
+                <ArrowRight className="h-3 w-3 text-muted-foreground shrink-0" />
+                <div className="flex items-center gap-1.5">
                   {swap.to_icon && (
-                    <img src={swap.to_icon} alt="" className="w-5 h-5 rounded-full" />
+                    <img src={swap.to_icon} alt="" className="w-4 h-4 rounded-full" />
                   )}
-                  <span className="text-sm font-medium text-foreground">{swap.to_currency}</span>
+                  <span className="text-sm text-foreground">{swap.to_currency}</span>
                 </div>
               </div>
-              <div className="flex items-center gap-1.5 text-muted-foreground">
-                <Clock className="h-3.5 w-3.5" />
-                <span className="text-xs">~2 min</span>
-              </div>
+              <span className="text-xs text-muted-foreground shrink-0 ml-4">
+                {formatDistanceToNow(new Date(swap.created_at), { addSuffix: true })}
+              </span>
             </div>
           ))}
-          {swaps.length === 0 && (
-            <div className="px-5 py-8 text-center text-sm text-muted-foreground">
-              No transactions yet
-            </div>
-          )}
         </div>
       </div>
     </section>
