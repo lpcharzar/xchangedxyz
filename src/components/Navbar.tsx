@@ -22,17 +22,24 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="relative z-20 border-b border-border/50 bg-background/30 backdrop-blur-md">
-      <div className="flex items-center justify-between px-6 py-3.5 max-w-6xl mx-auto">
-        <button onClick={() => navigate("/")} className="flex items-center gap-2">
-          <img src="/logo.png" alt="xchanged.xyz" className="h-7 w-7" />
-          <span className="text-lg font-bold tracking-tight">
+    <nav className="relative z-20 bg-background/60 backdrop-blur-md border-b border-border/30">
+      <div className="flex items-center justify-between px-5 py-3 max-w-6xl mx-auto">
+        {/* Hamburger (mobile) */}
+        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-foreground">
+          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+
+        {/* Logo center */}
+        <button onClick={() => navigate("/")} className="flex items-center gap-2 absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
+          <img src="/logo.png" alt="xchanged.xyz" className="h-6 w-6" />
+          <span className="text-base font-bold tracking-tight">
             <span className="text-primary">x</span>
             <span className="text-foreground">changed</span>
             <span className="text-primary">.xyz</span>
           </span>
         </button>
 
+        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <button
@@ -49,6 +56,7 @@ const Navbar = () => {
           ))}
         </div>
 
+        {/* Right side */}
         <div className="flex items-center gap-2">
           <ThemeToggle />
           {user?.email === ADMIN_EMAIL && (
@@ -91,14 +99,12 @@ const Navbar = () => {
               </Button>
             </>
           )}
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-foreground">
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
         </div>
       </div>
 
+      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border/50 px-4 pb-4 pt-2 space-y-1 bg-background/80 backdrop-blur-md">
+        <div className="md:hidden border-t border-border/30 px-4 pb-4 pt-2 space-y-1 bg-background/90 backdrop-blur-md">
           {navItems.map((item) => {
             const locked = item.requiresAuth && !user;
             return (
