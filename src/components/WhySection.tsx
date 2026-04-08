@@ -1,24 +1,27 @@
 import { Zap, ArrowLeftRight, PiggyBank } from "lucide-react";
-
-const advantages = [
-  {
-    icon: Zap,
-    title: "Fast",
-    description: "Most swaps complete in under 5 minutes thanks to automated processing.",
-  },
-  {
-    icon: ArrowLeftRight,
-    title: "1000+ coins",
-    description: "Exchange between Bitcoin, Ethereum, Solana, and hundreds of other cryptocurrencies.",
-  },
-  {
-    icon: PiggyBank,
-    title: "Best rates",
-    description: "We compare rates across providers to get you the best deal every time.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const WhySection = () => {
+  const { t } = useTranslation();
+
+  const advantages = [
+    {
+      icon: Zap,
+      title: t("why.fastTitle"),
+      description: t("why.fastDesc"),
+    },
+    {
+      icon: ArrowLeftRight,
+      title: t("why.coinsTitle"),
+      description: t("why.coinsDesc"),
+    },
+    {
+      icon: PiggyBank,
+      title: t("why.ratesTitle"),
+      description: t("why.ratesDesc"),
+    },
+  ];
+
   return (
     <section className="py-16 max-w-4xl mx-auto">
       <div className="grid md:grid-cols-3 gap-5">

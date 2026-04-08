@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "orderHistory": "Order History",
+    "addressBook": "Address Book",
+    "orderStatus": "Order Status",
+    "faq": "FAQ",
+    "support": "Support",
+    "admin": "Admin",
+    "logout": "Logout",
+    "signup": "Sign up",
+    "login": "Login / Sign up",
+    "loginRequired": "Login required"
+  },
+  "hero": {
+    "badge": "Live — swapping now",
+    "title1": "Swap crypto",
+    "title2": "instantly",
+    "subtitle": "No registration. No limits. 1,000+ coins supported."
+  },
+  "exchange": {
+    "terms": "By using the site you agree to the",
+    "tos": "Terms of Service",
+    "and": "and",
+    "privacy": "Privacy Policy"
+  },
+  "swaps": {
+    "title": "Recent swaps",
+    "ago": "ago"
+  },
+  "why": {
+    "fastTitle": "Fast",
+    "fastDesc": "Most swaps complete in under 5 minutes thanks to automated processing.",
+    "coinsTitle": "1000+ coins",
+    "coinsDesc": "Exchange between Bitcoin, Ethereum, Solana, and hundreds of other cryptocurrencies.",
+    "ratesTitle": "Best rates",
+    "ratesDesc": "We compare rates across providers to get you the best deal every time."
+  },
+  "faq": {
+    "title": "FAQ",
+    "viewAll": "View all FAQ →",
+    "q1": "How long does an exchange take?",
+    "a1": "Most exchanges complete in 2–30 minutes depending on network congestion and required confirmations.",
+    "q2": "How do I track my transaction?",
+    "a2": "Use the Order Status page with the transaction ID you received when starting the exchange.",
+    "q3": "Is registration required?",
+    "a3": "No. You can exchange without creating an account. Optional sign-up lets you save addresses and view history.",
+    "q4": "Are there hidden fees?",
+    "a4": "No. The rate you see before confirming is the rate you get. Network fees are shown upfront."
+  },
+  "footer": {
+    "tagline": "Non-custodial crypto exchange. No KYC required.",
+    "exchange": "Exchange",
+    "swap": "Swap",
+    "help": "Help",
+    "community": "Community",
+    "discord": "Discord",
+    "terms": "Terms",
+    "privacy": "Privacy"
+  }
+}

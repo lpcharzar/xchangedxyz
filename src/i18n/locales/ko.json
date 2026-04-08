@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "orderHistory": "주문 내역",
+    "addressBook": "주소록",
+    "orderStatus": "주문 상태",
+    "faq": "FAQ",
+    "support": "지원",
+    "admin": "관리자",
+    "logout": "로그아웃",
+    "signup": "가입",
+    "login": "로그인 / 가입",
+    "loginRequired": "로그인 필요"
+  },
+  "hero": {
+    "badge": "실시간 — 교환 진행 중",
+    "title1": "암호화폐를",
+    "title2": "즉시 교환",
+    "subtitle": "등록 불필요. 제한 없음. 1,000개 이상의 코인 지원."
+  },
+  "exchange": {
+    "terms": "사이트 이용 시",
+    "tos": "이용약관",
+    "and": "및",
+    "privacy": "개인정보처리방침"
+  },
+  "swaps": { "title": "최근 교환", "ago": "전" },
+  "why": {
+    "fastTitle": "빠름",
+    "fastDesc": "대부분의 교환은 5분 이내에 완료됩니다.",
+    "coinsTitle": "1000+ 코인",
+    "coinsDesc": "Bitcoin, Ethereum, Solana 및 수백 가지 암호화폐를 교환하세요.",
+    "ratesTitle": "최고 환율",
+    "ratesDesc": "여러 제공업체의 환율을 비교하여 최적의 거래를 제공합니다."
+  },
+  "faq": {
+    "title": "FAQ",
+    "viewAll": "모든 FAQ 보기 →",
+    "q1": "교환에 얼마나 걸리나요?",
+    "a1": "대부분의 교환은 2~30분 내에 완료됩니다.",
+    "q2": "거래를 추적하려면?",
+    "a2": "주문 상태 페이지에서 트랜잭션 ID를 사용하세요.",
+    "q3": "등록이 필요한가요?",
+    "a3": "아니요. 계정 없이 교환할 수 있습니다.",
+    "q4": "숨겨진 수수료가 있나요?",
+    "a4": "아니요. 표시된 환율이 적용됩니다."
+  },
+  "footer": {
+    "tagline": "비수탁 암호화폐 교환. KYC 불필요.",
+    "exchange": "교환",
+    "swap": "교환하기",
+    "help": "도움말",
+    "community": "커뮤니티",
+    "discord": "Discord",
+    "terms": "약관",
+    "privacy": "개인정보"
+  }
+}

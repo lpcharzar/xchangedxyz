@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { useEffect, useState, useMemo } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { formatDistanceToNow } from "date-fns";
+import { useTranslation } from "react-i18next";
 
 interface Swap {
   id: string;
@@ -14,6 +15,7 @@ interface Swap {
 }
 
 const StatsAndSwaps = () => {
+  const { t } = useTranslation();
   const [swaps, setSwaps] = useState<Swap[]>([]);
 
   useEffect(() => {
@@ -52,14 +54,13 @@ const StatsAndSwaps = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Most recent at top, least recent at bottom (already sorted desc from query)
   const sortedSwaps = useMemo(() => swaps.slice(0, 8), [swaps]);
 
   if (sortedSwaps.length === 0) return null;
 
   return (
     <section className="py-12 max-w-2xl mx-auto">
-      <h2 className="text-lg font-semibold text-foreground mb-4">Recent swaps</h2>
+      <h2 className="text-lg font-semibold text-foreground mb-4">{t("swaps.title")}</h2>
 
       <div className="rounded-xl bg-card/60 backdrop-blur-sm border border-border/60 overflow-hidden">
         <div className="divide-y divide-border/40">
@@ -87,7 +88,7 @@ const StatsAndSwaps = () => {
                 </div>
               </div>
               <span className="text-xs text-muted-foreground shrink-0 ml-4">
-                {formatDistanceToNow(new Date(swap.created_at))} ago
+                {formatDistanceToNow(new Date(swap.created_at))} {t("swaps.ago")}
               </span>
             </div>
           ))}

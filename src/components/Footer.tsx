@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <footer className="border-t border-border bg-card/50">
@@ -15,19 +17,19 @@ const Footer = () => {
               </span>
             </button>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Non-custodial crypto exchange. No KYC required.
+              {t("footer.tagline")}
             </p>
           </div>
 
           <div>
-            <h4 className="text-xs font-medium text-foreground mb-3">Exchange</h4>
+            <h4 className="text-xs font-medium text-foreground mb-3">{t("footer.exchange")}</h4>
             <ul className="space-y-1.5">
               {[
-                { label: "Swap", path: "/" },
-                { label: "Order History", path: "/order-history" },
-                { label: "Address Book", path: "/address-book" },
+                { label: t("footer.swap"), path: "/" },
+                { label: t("nav.orderHistory"), path: "/order-history" },
+                { label: t("nav.addressBook"), path: "/address-book" },
               ].map((item) => (
-                <li key={item.label}>
+                <li key={item.path}>
                   <button
                     onClick={() => navigate(item.path)}
                     className="text-xs text-muted-foreground hover:text-foreground transition-colors"
@@ -40,14 +42,14 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-xs font-medium text-foreground mb-3">Help</h4>
+            <h4 className="text-xs font-medium text-foreground mb-3">{t("footer.help")}</h4>
             <ul className="space-y-1.5">
               {[
-                { label: "FAQ", path: "/faq" },
-                { label: "Support", path: "/support" },
-                { label: "Order Status", path: "/order-status" },
+                { label: t("nav.faq"), path: "/faq" },
+                { label: t("nav.support"), path: "/support" },
+                { label: t("nav.orderStatus"), path: "/order-status" },
               ].map((item) => (
-                <li key={item.label}>
+                <li key={item.path}>
                   <button
                     onClick={() => navigate(item.path)}
                     className="text-xs text-muted-foreground hover:text-foreground transition-colors"
@@ -60,7 +62,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-xs font-medium text-foreground mb-3">Community</h4>
+            <h4 className="text-xs font-medium text-foreground mb-3">{t("footer.community")}</h4>
             <ul className="space-y-1.5">
               <li>
                 <a
@@ -69,7 +71,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Discord
+                  {t("footer.discord")}
                 </a>
               </li>
               <li>
@@ -79,7 +81,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Terms
+                  {t("footer.terms")}
                 </a>
               </li>
               <li>
@@ -89,7 +91,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Privacy
+                  {t("footer.privacy")}
                 </a>
               </li>
             </ul>
