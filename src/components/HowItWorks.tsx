@@ -1,35 +1,21 @@
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-
-const faqs = [
-  {
-    question: "How long does an exchange take?",
-    answer:
-      "Most exchanges complete in 2–30 minutes depending on network congestion and required confirmations.",
-  },
-  {
-    question: "How do I track my transaction?",
-    answer:
-      "Use the Order Status page with the transaction ID you received when starting the exchange.",
-  },
-  {
-    question: "Is registration required?",
-    answer:
-      "No. You can exchange without creating an account. Optional sign-up lets you save addresses and view history.",
-  },
-  {
-    question: "Are there hidden fees?",
-    answer:
-      "No. The rate you see before confirming is the rate you get. Network fees are shown upfront.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const HowItWorks = () => {
+  const { t } = useTranslation();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqs = [
+    { question: t("faq.q1"), answer: t("faq.a1") },
+    { question: t("faq.q2"), answer: t("faq.a2") },
+    { question: t("faq.q3"), answer: t("faq.a3") },
+    { question: t("faq.q4"), answer: t("faq.a4") },
+  ];
 
   return (
     <section className="py-16 max-w-2xl mx-auto">
-      <h2 className="text-lg font-semibold text-foreground mb-4">FAQ</h2>
+      <h2 className="text-lg font-semibold text-foreground mb-4">{t("faq.title")}</h2>
 
       <div className="rounded-xl bg-card border border-border divide-y divide-border overflow-hidden">
         {faqs.map((faq, i) => (
@@ -55,11 +41,8 @@ const HowItWorks = () => {
       </div>
 
       <div className="mt-4">
-        <a
-          href="/faq"
-          className="text-sm text-primary hover:underline"
-        >
-          View all FAQ →
+        <a href="/faq" className="text-sm text-primary hover:underline">
+          {t("faq.viewAll")}
         </a>
       </div>
     </section>

@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const ExchangeWidget = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="max-w-[560px] mx-auto">
       <div className="rounded-2xl bg-card/80 backdrop-blur-sm border border-border/60 p-1.5 shadow-lg shadow-primary/5">
@@ -14,23 +18,23 @@ const ExchangeWidget = () => {
       </div>
 
       <p className="text-center text-xs text-muted-foreground mt-3">
-        By using the site you agree to the{" "}
+        {t("exchange.terms")}{" "}
         <a
           href="https://simpleswap.io/terms-of-service"
           target="_blank"
           rel="noopener noreferrer"
           className="text-primary hover:underline"
         >
-          Terms of Service
+          {t("exchange.tos")}
         </a>{" "}
-        and{" "}
+        {t("exchange.and")}{" "}
         <a
           href="https://simpleswap.io/privacy-policy"
           target="_blank"
           rel="noopener noreferrer"
           className="text-primary hover:underline"
         >
-          Privacy Policy
+          {t("exchange.privacy")}
         </a>
       </p>
     </div>
