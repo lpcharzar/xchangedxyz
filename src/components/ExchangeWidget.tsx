@@ -1,7 +1,7 @@
 const ExchangeWidget = () => {
   return (
     <div className="max-w-[560px] mx-auto">
-      <div className="rounded-xl bg-card border border-border p-1">
+      <div className="rounded-2xl bg-card/80 backdrop-blur-sm border border-border/60 p-1.5 shadow-lg shadow-primary/5">
         <iframe
           id="simpleswap-frame"
           name="SimpleSwap Widget"
@@ -9,7 +9,7 @@ const ExchangeWidget = () => {
           height="392px"
           src="https://simpleswap.io/widget/00e8abdd-6e94-42c8-9a00-317b7c91f03c"
           frameBorder="0"
-          className="rounded-lg"
+          className="rounded-xl"
         />
       </div>
 
