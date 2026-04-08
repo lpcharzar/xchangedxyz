@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "orderHistory": "注文履歴",
+    "addressBook": "アドレス帳",
+    "orderStatus": "注文状況",
+    "faq": "FAQ",
+    "support": "サポート",
+    "admin": "管理者",
+    "logout": "ログアウト",
+    "signup": "登録",
+    "login": "ログイン / 登録",
+    "loginRequired": "ログインが必要"
+  },
+  "hero": {
+    "badge": "ライブ — 交換中",
+    "title1": "暗号資産を",
+    "title2": "即座に交換",
+    "subtitle": "登録不要。制限なし。1,000以上のコインに対応。"
+  },
+  "exchange": {
+    "terms": "サイトの利用により、",
+    "tos": "利用規約",
+    "and": "および",
+    "privacy": "プライバシーポリシー"
+  },
+  "swaps": { "title": "最近の交換", "ago": "前" },
+  "why": {
+    "fastTitle": "高速",
+    "fastDesc": "ほとんどの交換は5分以内に完了します。",
+    "coinsTitle": "1000以上のコイン",
+    "coinsDesc": "Bitcoin、Ethereum、Solanaなど数百の暗号資産を交換。",
+    "ratesTitle": "最良レート",
+    "ratesDesc": "複数のプロバイダーのレートを比較し、最良の取引を提供します。"
+  },
+  "faq": {
+    "title": "FAQ",
+    "viewAll": "すべてのFAQを見る →",
+    "q1": "交換にどのくらいかかりますか？",
+    "a1": "ほとんどの交換は2〜30分で完了します。",
+    "q2": "取引を追跡するには？",
+    "a2": "注文状況ページでトランザクションIDを使用します。",
+    "q3": "登録は必要ですか？",
+    "a3": "いいえ。アカウントなしで交換できます。",
+    "q4": "隠れた手数料はありますか？",
+    "a4": "いいえ。表示されるレートがそのまま適用されます。"
+  },
+  "footer": {
+    "tagline": "ノンカストディアル暗号資産交換。KYC不要。",
+    "exchange": "交換",
+    "swap": "交換する",
+    "help": "ヘルプ",
+    "community": "コミュニティ",
+    "discord": "Discord",
+    "terms": "利用規約",
+    "privacy": "プライバシー"
+  }
+}

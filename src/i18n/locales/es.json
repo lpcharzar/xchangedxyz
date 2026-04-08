@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "orderHistory": "Historial de órdenes",
+    "addressBook": "Libreta de direcciones",
+    "orderStatus": "Estado del pedido",
+    "faq": "Preguntas frecuentes",
+    "support": "Soporte",
+    "admin": "Admin",
+    "logout": "Cerrar sesión",
+    "signup": "Registrarse",
+    "login": "Iniciar sesión / Registrarse",
+    "loginRequired": "Inicio de sesión requerido"
+  },
+  "hero": {
+    "badge": "En vivo — intercambiando ahora",
+    "title1": "Intercambia crypto",
+    "title2": "al instante",
+    "subtitle": "Sin registro. Sin límites. Más de 1,000 monedas."
+  },
+  "exchange": {
+    "terms": "Al usar el sitio aceptas los",
+    "tos": "Términos de servicio",
+    "and": "y la",
+    "privacy": "Política de privacidad"
+  },
+  "swaps": {
+    "title": "Intercambios recientes",
+    "ago": "atrás"
+  },
+  "why": {
+    "fastTitle": "Rápido",
+    "fastDesc": "La mayoría de los intercambios se completan en menos de 5 minutos.",
+    "coinsTitle": "1000+ monedas",
+    "coinsDesc": "Intercambia entre Bitcoin, Ethereum, Solana y cientos de otras criptomonedas.",
+    "ratesTitle": "Mejores tasas",
+    "ratesDesc": "Comparamos tasas entre proveedores para darte la mejor oferta."
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "viewAll": "Ver todas las preguntas →",
+    "q1": "¿Cuánto tarda un intercambio?",
+    "a1": "La mayoría se completan en 2–30 minutos según la congestión de la red.",
+    "q2": "¿Cómo rastreo mi transacción?",
+    "a2": "Usa la página de Estado del pedido con el ID de transacción que recibiste.",
+    "q3": "¿Se requiere registro?",
+    "a3": "No. Puedes intercambiar sin crear una cuenta. El registro opcional te permite guardar direcciones.",
+    "q4": "¿Hay tarifas ocultas?",
+    "a4": "No. La tasa que ves es la que obtienes. Las tarifas de red se muestran por adelantado."
+  },
+  "footer": {
+    "tagline": "Intercambio de crypto sin custodia. Sin KYC.",
+    "exchange": "Intercambio",
+    "swap": "Intercambiar",
+    "help": "Ayuda",
+    "community": "Comunidad",
+    "discord": "Discord",
+    "terms": "Términos",
+    "privacy": "Privacidad"
+  }
+}

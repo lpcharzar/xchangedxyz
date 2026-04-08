@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "orderHistory": "Historique",
+    "addressBook": "Carnet d'adresses",
+    "orderStatus": "Statut de commande",
+    "faq": "FAQ",
+    "support": "Support",
+    "admin": "Admin",
+    "logout": "Déconnexion",
+    "signup": "S'inscrire",
+    "login": "Connexion / Inscription",
+    "loginRequired": "Connexion requise"
+  },
+  "hero": {
+    "badge": "En direct — échanges en cours",
+    "title1": "Échangez des crypto",
+    "title2": "instantanément",
+    "subtitle": "Sans inscription. Sans limites. Plus de 1 000 cryptos."
+  },
+  "exchange": {
+    "terms": "En utilisant le site, vous acceptez les",
+    "tos": "Conditions d'utilisation",
+    "and": "et la",
+    "privacy": "Politique de confidentialité"
+  },
+  "swaps": {
+    "title": "Échanges récents",
+    "ago": "passé"
+  },
+  "why": {
+    "fastTitle": "Rapide",
+    "fastDesc": "La plupart des échanges sont terminés en moins de 5 minutes.",
+    "coinsTitle": "1000+ cryptos",
+    "coinsDesc": "Échangez entre Bitcoin, Ethereum, Solana et des centaines d'autres.",
+    "ratesTitle": "Meilleurs taux",
+    "ratesDesc": "Nous comparons les taux pour vous offrir la meilleure offre."
+  },
+  "faq": {
+    "title": "FAQ",
+    "viewAll": "Voir toutes les FAQ →",
+    "q1": "Combien de temps prend un échange ?",
+    "a1": "La plupart se terminent en 2 à 30 minutes selon la congestion du réseau.",
+    "q2": "Comment suivre ma transaction ?",
+    "a2": "Utilisez la page Statut de commande avec l'ID de transaction reçu.",
+    "q3": "L'inscription est-elle obligatoire ?",
+    "a3": "Non. Vous pouvez échanger sans compte. L'inscription facultative permet de sauvegarder des adresses.",
+    "q4": "Y a-t-il des frais cachés ?",
+    "a4": "Non. Le taux affiché est le taux appliqué. Les frais réseau sont indiqués à l'avance."
+  },
+  "footer": {
+    "tagline": "Échange crypto non-custodial. Sans KYC.",
+    "exchange": "Échange",
+    "swap": "Échanger",
+    "help": "Aide",
+    "community": "Communauté",
+    "discord": "Discord",
+    "terms": "Conditions",
+    "privacy": "Confidentialité"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "orderHistory": "Bestellverlauf",
+    "addressBook": "Adressbuch",
+    "orderStatus": "Bestellstatus",
+    "faq": "FAQ",
+    "support": "Support",
+    "admin": "Admin",
+    "logout": "Abmelden",
+    "signup": "Registrieren",
+    "login": "Anmelden / Registrieren",
+    "loginRequired": "Anmeldung erforderlich"
+  },
+  "hero": {
+    "badge": "Live — Tausch läuft",
+    "title1": "Crypto tauschen",
+    "title2": "sofort",
+    "subtitle": "Keine Registrierung. Keine Limits. Über 1.000 Coins."
+  },
+  "exchange": {
+    "terms": "Mit der Nutzung akzeptieren Sie die",
+    "tos": "Nutzungsbedingungen",
+    "and": "und die",
+    "privacy": "Datenschutzrichtlinie"
+  },
+  "swaps": { "title": "Letzte Tauschvorgänge", "ago": "vor" },
+  "why": {
+    "fastTitle": "Schnell",
+    "fastDesc": "Die meisten Tauschvorgänge sind in unter 5 Minuten abgeschlossen.",
+    "coinsTitle": "1000+ Coins",
+    "coinsDesc": "Tauschen Sie zwischen Bitcoin, Ethereum, Solana und Hunderten weiteren.",
+    "ratesTitle": "Beste Kurse",
+    "ratesDesc": "Wir vergleichen Kurse verschiedener Anbieter für das beste Angebot."
+  },
+  "faq": {
+    "title": "FAQ",
+    "viewAll": "Alle FAQ ansehen →",
+    "q1": "Wie lange dauert ein Tausch?",
+    "a1": "Die meisten werden in 2–30 Minuten abgeschlossen.",
+    "q2": "Wie verfolge ich meine Transaktion?",
+    "a2": "Verwenden Sie die Bestellstatus-Seite mit Ihrer Transaktions-ID.",
+    "q3": "Ist eine Registrierung erforderlich?",
+    "a3": "Nein. Sie können ohne Konto tauschen. Optionale Registrierung ermöglicht das Speichern von Adressen.",
+    "q4": "Gibt es versteckte Gebühren?",
+    "a4": "Nein. Der angezeigte Kurs ist der Kurs, den Sie erhalten."
+  },
+  "footer": {
+    "tagline": "Non-custodialer Krypto-Tausch. Kein KYC.",
+    "exchange": "Tausch",
+    "swap": "Tauschen",
+    "help": "Hilfe",
+    "community": "Community",
+    "discord": "Discord",
+    "terms": "AGB",
+    "privacy": "Datenschutz"
+  }
+}

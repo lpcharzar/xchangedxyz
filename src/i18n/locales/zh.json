@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "orderHistory": "订单历史",
+    "addressBook": "地址簿",
+    "orderStatus": "订单状态",
+    "faq": "常见问题",
+    "support": "支持",
+    "admin": "管理",
+    "logout": "退出",
+    "signup": "注册",
+    "login": "登录 / 注册",
+    "loginRequired": "需要登录"
+  },
+  "hero": {
+    "badge": "实时 — 正在交换",
+    "title1": "即时交换",
+    "title2": "加密货币",
+    "subtitle": "无需注册。无限制。支持 1,000+ 币种。"
+  },
+  "exchange": {
+    "terms": "使用本站即表示您同意",
+    "tos": "服务条款",
+    "and": "和",
+    "privacy": "隐私政策"
+  },
+  "swaps": { "title": "最近交换", "ago": "前" },
+  "why": {
+    "fastTitle": "快速",
+    "fastDesc": "大多数交换在5分钟内完成。",
+    "coinsTitle": "1000+ 币种",
+    "coinsDesc": "在比特币、以太坊、Solana和数百种其他加密货币之间交换。",
+    "ratesTitle": "最优汇率",
+    "ratesDesc": "我们比较各提供商的汇率，为您提供最佳价格。"
+  },
+  "faq": {
+    "title": "常见问题",
+    "viewAll": "查看所有问题 →",
+    "q1": "交换需要多长时间？",
+    "a1": "大多数交换在2-30分钟内完成。",
+    "q2": "如何追踪我的交易？",
+    "a2": "使用订单状态页面和您的交易ID。",
+    "q3": "需要注册吗？",
+    "a3": "不需要。无需账户即可交换。",
+    "q4": "有隐藏费用吗？",
+    "a4": "没有。显示的汇率就是您获得的汇率。"
+  },
+  "footer": {
+    "tagline": "非托管加密交换。无需KYC。",
+    "exchange": "交换",
+    "swap": "交换",
+    "help": "帮助",
+    "community": "社区",
+    "discord": "Discord",
+    "terms": "条款",
+    "privacy": "隐私"
+  }
+}

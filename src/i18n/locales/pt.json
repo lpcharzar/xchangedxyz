@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "orderHistory": "Histórico de pedidos",
+    "addressBook": "Livro de endereços",
+    "orderStatus": "Status do pedido",
+    "faq": "FAQ",
+    "support": "Suporte",
+    "admin": "Admin",
+    "logout": "Sair",
+    "signup": "Cadastrar",
+    "login": "Entrar / Cadastrar",
+    "loginRequired": "Login necessário"
+  },
+  "hero": {
+    "badge": "Ao vivo — trocando agora",
+    "title1": "Troque crypto",
+    "title2": "instantaneamente",
+    "subtitle": "Sem cadastro. Sem limites. Mais de 1.000 moedas."
+  },
+  "exchange": {
+    "terms": "Ao usar o site você aceita os",
+    "tos": "Termos de Serviço",
+    "and": "e a",
+    "privacy": "Política de Privacidade"
+  },
+  "swaps": { "title": "Trocas recentes", "ago": "atrás" },
+  "why": {
+    "fastTitle": "Rápido",
+    "fastDesc": "A maioria das trocas é concluída em menos de 5 minutos.",
+    "coinsTitle": "1000+ moedas",
+    "coinsDesc": "Troque entre Bitcoin, Ethereum, Solana e centenas de outras criptomoedas.",
+    "ratesTitle": "Melhores taxas",
+    "ratesDesc": "Comparamos taxas entre provedores para te dar a melhor oferta."
+  },
+  "faq": {
+    "title": "FAQ",
+    "viewAll": "Ver todas as perguntas →",
+    "q1": "Quanto tempo leva uma troca?",
+    "a1": "A maioria é concluída em 2 a 30 minutos.",
+    "q2": "Como rastreio minha transação?",
+    "a2": "Use a página de Status do pedido com o ID da transação.",
+    "q3": "É necessário registro?",
+    "a3": "Não. Você pode trocar sem criar uma conta.",
+    "q4": "Há taxas ocultas?",
+    "a4": "Não. A taxa exibida é a taxa que você recebe."
+  },
+  "footer": {
+    "tagline": "Exchange de crypto sem custódia. Sem KYC.",
+    "exchange": "Exchange",
+    "swap": "Trocar",
+    "help": "Ajuda",
+    "community": "Comunidade",
+    "discord": "Discord",
+    "terms": "Termos",
+    "privacy": "Privacidade"
+  }
+}
