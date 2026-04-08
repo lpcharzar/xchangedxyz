@@ -75,7 +75,7 @@ const StatsAndSwaps = () => {
                     <img src={swap.from_icon} alt="" className="w-4 h-4 rounded-full" />
                   )}
                   <span className="text-sm text-foreground font-medium">
-                    {swap.amount} {swap.from_currency}
+                    ${swap.amount} {swap.from_currency}
                   </span>
                 </div>
                 <ArrowRight className="h-3 w-3 text-primary/60 shrink-0" />
