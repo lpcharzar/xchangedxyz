@@ -56,5 +56,6 @@
     "discord": "Discord",
     "terms": "Conditions",
     "privacy": "Confidentialité"
-  }
+  },
+  "help": { "needHelp": "Besoin d'aide ?" }
 }

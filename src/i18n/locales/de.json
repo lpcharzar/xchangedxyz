@@ -53,5 +53,6 @@
     "discord": "Discord",
     "terms": "AGB",
     "privacy": "Datenschutz"
-  }
+  },
+  "help": { "needHelp": "Brauchen Sie Hilfe?" }
 }

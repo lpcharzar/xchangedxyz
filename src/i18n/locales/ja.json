@@ -53,5 +53,6 @@
     "discord": "Discord",
     "terms": "利用規約",
     "privacy": "プライバシー"
-  }
+  },
+  "help": { "needHelp": "お困りですか？" }
 }
