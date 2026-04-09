@@ -53,5 +53,6 @@
     "discord": "Discord",
     "terms": "الشروط",
     "privacy": "الخصوصية"
-  }
+  },
+  "help": { "needHelp": "هل تحتاج مساعدة؟" }
 }

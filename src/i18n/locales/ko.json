@@ -53,5 +53,6 @@
     "discord": "Discord",
     "terms": "약관",
     "privacy": "개인정보"
-  }
+  },
+  "help": { "needHelp": "도움이 필요하세요?" }
 }

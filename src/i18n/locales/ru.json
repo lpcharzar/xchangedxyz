@@ -53,5 +53,6 @@
     "discord": "Discord",
     "terms": "Условия",
     "privacy": "Конфиденциальность"
-  }
+  },
+  "help": { "needHelp": "Нужна помощь?" }
 }
