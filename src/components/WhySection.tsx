@@ -1,42 +1,49 @@
-import { Zap, ArrowLeftRight, PiggyBank } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-
-const ease = [0.16, 1, 0.3, 1] as const;
+import speedImg from "@/assets/feature-speed.jpg";
+import coinsImg from "@/assets/feature-coins.jpg";
+import ratesImg from "@/assets/feature-rates.jpg";
 
 const WhySection = () => {
   const { t } = useTranslation();
 
   const advantages = [
-    { icon: Zap, title: t("why.fastTitle"), description: t("why.fastDesc"), accent: "from-primary/30 to-transparent" },
-    { icon: ArrowLeftRight, title: t("why.coinsTitle"), description: t("why.coinsDesc"), accent: "from-[hsl(var(--primary-glow))]/30 to-transparent" },
-    { icon: PiggyBank, title: t("why.ratesTitle"), description: t("why.ratesDesc"), accent: "from-purple-500/30 to-transparent" },
+    { image: speedImg, title: t("why.fastTitle"), description: t("why.fastDesc") },
+    { image: coinsImg, title: t("why.coinsTitle"), description: t("why.coinsDesc") },
+    { image: ratesImg, title: t("why.ratesTitle"), description: t("why.ratesDesc") },
   ];
 
   return (
-    <section className="py-20 max-w-4xl mx-auto">
+    <section className="py-20 max-w-5xl mx-auto px-5">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
-        className="grid md:grid-cols-3 gap-5"
+        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+        className="grid md:grid-cols-3 gap-6"
       >
-        {advantages.map((adv, i) => (
-          <motion.div
+        {advantages.map((adv) => (
+          <motion.article
             key={adv.title}
             variants={{
-              hidden: { opacity: 0, y: 24 },
-              visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 120, damping: 18 } },
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
             }}
-            className={`depth-card rounded-xl p-6 ${i === 1 ? "md:translate-y-3" : ""}`}
+            className="depth-card rounded-xl overflow-hidden flex flex-col"
           >
-            <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${adv.accent} flex items-center justify-center mb-4 ring-1 ring-primary/20`}>
-              <adv.icon className="h-4.5 w-4.5 text-primary" />
+            <div className="aspect-[4/3] overflow-hidden bg-muted">
+              <img
+                src={adv.image}
+                alt={adv.title}
+                loading="lazy"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
             </div>
-            <h3 className="text-sm font-semibold text-foreground mb-1.5 font-display tracking-tight">{adv.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{adv.description}</p>
-          </motion.div>
+            <div className="p-5">
+              <h3 className="text-lg font-display text-foreground mb-1.5">{adv.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{adv.description}</p>
+            </div>
+          </motion.article>
         ))}
       </motion.div>
     </section>
